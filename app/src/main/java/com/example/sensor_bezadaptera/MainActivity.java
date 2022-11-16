@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               if(sensors.get(i).getName()=="Goldfish 3 axis Accelerometer"){
+               if(sensors.get(i).getType()==Sensor.TYPE_ACCELEROMETER){
                    Intent intent = new Intent(MainActivity.this, Accelerometer.class);
                    startActivity(intent);
                }
