@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                    Intent intent = new Intent(MainActivity.this, Accelerometer.class);
                    startActivity(intent);
                }
-                if(sensors.get(i).getName()=="Goldfish 3 axis Gyroscope"){
+                if(sensors.get(i).getType()==Sensor.TYPE_GYROSCOPE){
                     Intent intent = new Intent(MainActivity.this,Gyroscope.class);
                     startActivity(intent);
 
