@@ -15,6 +15,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -91,6 +92,8 @@ public class Localization extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                }else{
+                    Toast.makeText(getApplicationContext(), "NO DATA",Toast.LENGTH_LONG).show();
                 }
 
             }
