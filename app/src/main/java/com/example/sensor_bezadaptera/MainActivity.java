@@ -9,6 +9,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,11 +17,21 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView=(TextView) findViewById(R.id.textView);
+        button = (Button) findViewById(R.id.button);
+        //nowa activity
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte=new Intent(MainActivity.this,Localization.class);
+                startActivity(inte);
+            }
+        });
         SensorManager sensorManager =(SensorManager) getSystemService(Context.SENSOR_SERVICE);
         List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
         ListView list=(ListView) findViewById(R.id.list);
@@ -38,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                    startActivity(intent);
                }
                 if(sensors.get(i).getType()==Sensor.TYPE_GYROSCOPE){
-                    Intent intent = new Intent(MainActivity.this,Gyroscope.class);
-                    startActivity(intent);
+                    Intent inten = new Intent(MainActivity.this,Gyroscope.class);
+                    startActivity(inten);
 
                 }
 //if(itemtext.equals("Youtube ")||itemtext.equals("youtube.com ")){
