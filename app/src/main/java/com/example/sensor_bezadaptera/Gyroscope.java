@@ -21,7 +21,7 @@ TextView textView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accelerometer);
-        textView=findViewById(R.id.textView3);
+        textView=findViewById(R.id.textView2);
         sensorManager=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_NORMAL);
@@ -31,7 +31,7 @@ TextView textView;
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if(sensorEvent.sensor.getType()==Sensor.TYPE_GYROSCOPE){
-            ((TextView) findViewById(R.id.textView3)).setText(" X:"+
+             textView.setText(" X:"+
                     sensorEvent.values[0]+ " Y: "+
                     sensorEvent.values[1]+
                     " Z: " +sensorEvent.values[2]);
